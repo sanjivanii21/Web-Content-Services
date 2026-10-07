@@ -14,6 +14,7 @@ import Solutions from "./pages/Solutions";
 import Technology from "./pages/Technology";
 import Apply from "./pages/Apply";
 import NotFound from "./pages/NotFound";
+import Chatbot from "./chatbot/Chatbot";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -42,6 +43,7 @@ export default function App() {
         <Route path="/apply" element={<Apply />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Chatbot />
     </>
   );
 }
