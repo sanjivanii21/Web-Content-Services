@@ -19,12 +19,7 @@ const initialFormData = {
   termsAccepted: false,
 };
 
-const applicationTypes = [
-  "Internship",
-  "Full-Time",
-  "Remote",
-  "Freelancing",
-];
+const applicationTypes = ["Internship", "Full-Time", "Remote", "Freelancing"];
 
 const roles = [
   "Business Consultant",
@@ -50,30 +45,10 @@ const availabilityOptions = ["Immediate", "15 Days", "1 Month"];
 const css = `
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* PURE WHITE PAGE */
-html,
-body,
-#root {
-  min-height: 100%;
-  background: #ffffff !important;
-}
-
 body.page-apply,
 body.theme-warm.page-apply {
-  background: #ffffff !important;
+  background: #fff !important;
   color: #1f2937 !important;
-}
-
-.apply-page {
-  width: 100%;
-  min-height: 100vh;
-  padding: 44px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #1f2937;
-  background: #ffffff !important;
-  font-family: 'Poppins', sans-serif;
 }
 
 .apply-page,
@@ -81,61 +56,71 @@ body.theme-warm.page-apply {
   box-sizing: border-box;
 }
 
+.apply-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #fff;
+  color: #1f2937;
+  font-family: 'Poppins', sans-serif;
+}
+
 .apply-page .apply-container {
   width: 100%;
-  max-width: 920px;
-  padding: clamp(22px, 4vw, 38px);
-  overflow: hidden;
+  max-width: 820px;
+  padding: 22px;
   border: 1px solid #e5e7eb;
-  border-radius: 18px;
-  background: #ffffff !important;
-  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.07);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 3px 14px rgba(15, 23, 42, 0.05);
 }
 
 .apply-page .apply-heading {
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .apply-page .apply-eyebrow {
-  margin: 0 0 9px;
+  margin: 0 0 4px;
   color: #7c3aed;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
 .apply-page .apply-title {
   margin: 0;
   color: #111827;
-  font-size: clamp(28px, 4vw, 38px);
+  font-size: clamp(25px, 3vw, 32px);
   line-height: 1.25;
-  letter-spacing: -1px;
   font-weight: 700;
 }
 
 .apply-page .apply-subtitle {
-  max-width: 540px;
-  margin: 12px auto 0;
+  max-width: 520px;
+  margin: 6px auto 0;
   color: #6b7280;
-  font-size: 12px;
-  line-height: 1.8;
+  font-size: 11px;
+  line-height: 1.5;
 }
 
 .apply-page .apply-section {
-  margin-top: 28px;
+  margin-top: 16px;
 }
 
 .apply-page .apply-section-heading {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin: 0 0 16px;
+  gap: 9px;
+  margin: 0 0 10px;
   color: #1f2937;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
 }
 
@@ -149,7 +134,7 @@ body.theme-warm.page-apply {
 .apply-page .apply-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  gap: 10px 14px;
 }
 
 .apply-page .apply-field {
@@ -158,9 +143,9 @@ body.theme-warm.page-apply {
 
 .apply-page .apply-field label {
   display: block;
-  margin: 0 0 8px;
+  margin: 0 0 4px;
   color: #374151;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
 }
 
@@ -173,21 +158,20 @@ body.theme-warm.page-apply {
 .apply-page .apply-field textarea {
   display: block;
   width: 100%;
-  min-height: 48px;
-  padding: 12px 14px;
+  min-height: 38px;
+  padding: 8px 10px;
   border: 1px solid #d1d5db;
-  border-radius: 9px;
+  border-radius: 7px;
   outline: none;
   color: #1f2937;
-  background: #ffffff !important;
-  font: 400 12px 'Poppins', sans-serif;
-  transition: border-color .2s ease, box-shadow .2s ease;
+  background: #fff;
+  font: 400 11px 'Poppins', sans-serif;
 }
 
 .apply-page .apply-field textarea {
-  min-height: 115px;
+  min-height: 72px;
   resize: vertical;
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 .apply-page .apply-field input::placeholder,
@@ -200,12 +184,12 @@ body.theme-warm.page-apply {
 .apply-page .apply-field select:focus,
 .apply-page .apply-field textarea:focus {
   border-color: #8b5cf6;
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, .1);
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.1);
 }
 
 .apply-page .apply-field select option {
   color: #1f2937;
-  background: #ffffff;
+  background: #fff;
 }
 
 .apply-page .apply-full {
@@ -213,27 +197,25 @@ body.theme-warm.page-apply {
 }
 
 .apply-page .apply-upload {
-  padding: 25px 16px;
+  padding: 15px 12px;
   border: 1.5px dashed #c4b5fd;
-  border-radius: 12px;
+  border-radius: 9px;
   text-align: center;
-  background: #ffffff !important;
+  background: #fff;
   cursor: pointer;
-  outline: none;
-  transition: border-color .2s ease, box-shadow .2s ease;
 }
 
 .apply-page .apply-upload:hover,
 .apply-page .apply-upload:focus-visible,
 .apply-page .apply-upload.dragging {
   border-color: #7c3aed;
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, .07);
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.07);
 }
 
 .apply-page .apply-upload-title {
   margin: 0;
   color: #374151;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
 }
 
@@ -243,20 +225,20 @@ body.theme-warm.page-apply {
 }
 
 .apply-page .apply-upload-help {
-  margin: 8px 0 0;
+  margin: 5px 0 0;
   color: #6b7280;
   font-size: 10px;
 }
 
 .apply-page .apply-file-name {
-  margin-top: 10px;
+  margin-top: 7px;
   color: #15803d;
   font-size: 11px;
   overflow-wrap: anywhere;
 }
 
 .apply-page .apply-file-error {
-  margin-top: 9px;
+  margin-top: 7px;
   color: #dc2626;
   font-size: 11px;
 }
@@ -264,64 +246,62 @@ body.theme-warm.page-apply {
 .apply-page .apply-checkbox {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 8px;
   color: #4b5563;
-  font-size: 11px;
-  line-height: 1.8;
+  font-size: 10px;
+  line-height: 1.6;
   cursor: pointer;
 }
 
 .apply-page .apply-checkbox input {
-  width: 16px;
-  height: 16px;
-  margin: 3px 0 0;
+  width: 15px;
+  height: 15px;
+  margin: 2px 0 0;
   flex: 0 0 auto;
   accent-color: #7c3aed;
 }
 
 .apply-page .apply-submit {
   width: 100%;
-  min-height: 51px;
-  margin-top: 24px;
+  min-height: 42px;
+  margin-top: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   border: none;
-  border-radius: 9px;
-  color: #ffffff;
+  border-radius: 7px;
+  color: #fff;
   background: linear-gradient(100deg, #7c3aed, #2563eb);
-  box-shadow: 0 5px 15px rgba(88, 80, 220, .16);
-  font: 600 13px 'Poppins', sans-serif;
+  font: 600 12px 'Poppins', sans-serif;
   cursor: pointer;
-  transition: transform .2s ease, opacity .2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .apply-page .apply-submit:hover:not(:disabled) {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(88, 80, 220, .22);
+  opacity: 0.9;
 }
 
 .apply-page .apply-submit:disabled {
-  opacity: .7;
+  opacity: 0.7;
   cursor: wait;
 }
 
 .apply-page .apply-loader {
-  width: 17px;
-  height: 17px;
-  border: 2px solid rgba(255, 255, 255, .8);
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
   border-top-color: transparent;
   border-radius: 50%;
-  animation: applySpin .7s linear infinite;
+  animation: applySpin 0.7s linear infinite;
 }
 
 .apply-page .apply-message {
-  margin-top: 15px;
-  padding: 13px 14px;
-  border-radius: 9px;
-  font-size: 12px;
-  line-height: 1.7;
+  margin-top: 10px;
+  padding: 9px 11px;
+  border-radius: 7px;
+  font-size: 11px;
+  line-height: 1.5;
 }
 
 .apply-page .apply-message.success {
@@ -337,34 +317,30 @@ body.theme-warm.page-apply {
 }
 
 .apply-page .apply-footnote {
-  margin: 11px 0 0;
+  margin: 6px 0 0;
   color: #6b7280;
-  font-size: 10px;
-  line-height: 1.7;
+  font-size: 9px;
+  line-height: 1.5;
   text-align: center;
 }
 
 @keyframes applySpin {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
 @media (max-width: 620px) {
   .apply-page {
-    padding: 20px 12px;
-    align-items: flex-start;
+    padding: 10px;
   }
 
   .apply-page .apply-container {
-    padding: 24px 16px;
-    border-radius: 13px;
-    box-shadow: 0 3px 16px rgba(15, 23, 42, .06);
+    padding: 16px 12px;
+    border-radius: 10px;
   }
 
   .apply-page .apply-grid {
     grid-template-columns: minmax(0, 1fr);
-    gap: 15px;
+    gap: 10px;
   }
 
   .apply-page .apply-full {
@@ -372,21 +348,17 @@ body.theme-warm.page-apply {
   }
 
   .apply-page .apply-heading {
-    margin-bottom: 24px;
+    margin-bottom: 14px;
+  }
+
+  .apply-page .apply-section {
+    margin-top: 15px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .apply-page .apply-loader {
     animation: none;
-  }
-
-  .apply-page .apply-submit,
-  .apply-page .apply-upload,
-  .apply-page .apply-field input,
-  .apply-page .apply-field select,
-  .apply-page .apply-field textarea {
-    transition: none;
   }
 }
 `;
@@ -405,7 +377,7 @@ export default function Apply() {
     document.body.classList.add("theme-warm", "page-apply");
 
     return () => {
-      document.body.classList.remove("page-apply");
+      document.body.classList.remove("page-apply", "theme-warm");
     };
   }, []);
 
@@ -413,7 +385,6 @@ export default function Apply() {
 
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
-
     setFormData((previous) => ({
       ...previous,
       [name]: type === "checkbox" ? checked : value,
@@ -429,9 +400,8 @@ export default function Apply() {
     }
 
     const extension = file.name.split(".").pop().toLowerCase();
-    const allowed = ["pdf", "doc", "docx"];
 
-    if (!allowed.includes(extension)) {
+    if (!["pdf", "doc", "docx"].includes(extension)) {
       setResume(null);
       setResumeError("Please select a PDF, DOC, or DOCX file.");
       if (fileInputRef.current) fileInputRef.current.value = "";
@@ -473,17 +443,13 @@ export default function Apply() {
     try {
       const response = await fetch(API_URL, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
       if (!response.ok) {
         const errorText = await response.text();
-        throw new Error(
-          errorText || `Server returned status ${response.status}.`
-        );
+        throw new Error(errorText || `Server returned status ${response.status}.`);
       }
 
       setMessage({
@@ -495,9 +461,7 @@ export default function Apply() {
       setResume(null);
       setResumeError("");
 
-      if (fileInputRef.current) {
-        fileInputRef.current.value = "";
-      }
+      if (fileInputRef.current) fileInputRef.current.value = "";
     } catch (error) {
       console.error("Application submission error:", error);
 
@@ -520,11 +484,7 @@ export default function Apply() {
       <section className="apply-container" aria-labelledby="apply-title">
         <header className="apply-heading">
           <p className="apply-eyebrow">Career opportunities</p>
-
-          <h1 className="apply-title" id="apply-title">
-            Apply Now
-          </h1>
-
+          <h1 className="apply-title" id="apply-title">Apply Now</h1>
           <p className="apply-subtitle">
             Take the next step in your career. Complete the details below and
             our team will review your application.
@@ -533,212 +493,84 @@ export default function Apply() {
 
         <form id="form" onSubmit={handleSubmit}>
           <section className="apply-section">
-            <h2 className="apply-section-heading">
-              Personal information
-            </h2>
-
+            <h2 className="apply-section-heading">Personal information</h2>
             <div className="apply-grid">
               <div className="apply-field">
-                <label htmlFor="fullName">
-                  Full name <span className="apply-required">*</span>
-                </label>
-                <input
-                  id="fullName"
-                  name="fullName"
-                  type="text"
-                  autoComplete="name"
-                  placeholder="Enter your full name"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  required
-                />
+                <label htmlFor="fullName">Full name <span className="apply-required">*</span></label>
+                <input id="fullName" name="fullName" type="text" autoComplete="name" placeholder="Enter your full name" value={formData.fullName} onChange={handleChange} required />
               </div>
 
               <div className="apply-field">
-                <label htmlFor="email">
-                  Email address <span className="apply-required">*</span>
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  placeholder="name@example.com"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
+                <label htmlFor="email">Email address <span className="apply-required">*</span></label>
+                <input id="email" name="email" type="email" autoComplete="email" placeholder="name@example.com" value={formData.email} onChange={handleChange} required />
               </div>
 
               <div className="apply-field">
-                <label htmlFor="phone">
-                  Phone number <span className="apply-required">*</span>
-                </label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  autoComplete="tel"
-                  placeholder="Enter your phone number"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                />
+                <label htmlFor="phone">Phone number <span className="apply-required">*</span></label>
+                <input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="Enter your phone number" value={formData.phone} onChange={handleChange} required />
               </div>
 
               <div className="apply-field">
-                <label htmlFor="location">
-                  Location <span className="apply-required">*</span>
-                </label>
-                <input
-                  id="location"
-                  name="location"
-                  type="text"
-                  placeholder="City, State"
-                  value={formData.location}
-                  onChange={handleChange}
-                  required
-                />
+                <label htmlFor="location">Location <span className="apply-required">*</span></label>
+                <input id="location" name="location" type="text" placeholder="City, State" value={formData.location} onChange={handleChange} required />
               </div>
             </div>
           </section>
 
           <section className="apply-section">
-            <h2 className="apply-section-heading">
-              Application details
-            </h2>
-
+            <h2 className="apply-section-heading">Application details</h2>
             <div className="apply-grid">
               <div className="apply-field">
-                <label htmlFor="applicationType">
-                  Application type <span className="apply-required">*</span>
-                </label>
-                <select
-                  id="applicationType"
-                  name="applicationType"
-                  value={formData.applicationType}
-                  onChange={handleChange}
-                  required
-                >
+                <label htmlFor="applicationType">Application type <span className="apply-required">*</span></label>
+                <select id="applicationType" name="applicationType" value={formData.applicationType} onChange={handleChange} required>
                   <option value="">Choose an application type</option>
-                  {applicationTypes.map((item) => (
-                    <option key={item} value={item}>
-                      {item}
-                    </option>
-                  ))}
+                  {applicationTypes.map((item) => <option key={item} value={item}>{item}</option>)}
                 </select>
               </div>
 
               <div className="apply-field">
-                <label htmlFor="role">
-                  Preferred role <span className="apply-required">*</span>
-                </label>
-                <select
-                  id="role"
-                  name="role"
-                  value={formData.role}
-                  onChange={handleChange}
-                  required
-                >
+                <label htmlFor="role">Preferred role <span className="apply-required">*</span></label>
+                <select id="role" name="role" value={formData.role} onChange={handleChange} required>
                   <option value="">Choose a role</option>
-                  {roles.map((item) => (
-                    <option key={item} value={item}>
-                      {item}
-                    </option>
-                  ))}
+                  {roles.map((item) => <option key={item} value={item}>{item}</option>)}
                 </select>
               </div>
 
               <div className="apply-field">
-                <label htmlFor="experience">
-                  Experience <span className="apply-required">*</span>
-                </label>
-                <select
-                  id="experience"
-                  name="experience"
-                  value={formData.experience}
-                  onChange={handleChange}
-                  required
-                >
+                <label htmlFor="experience">Experience <span className="apply-required">*</span></label>
+                <select id="experience" name="experience" value={formData.experience} onChange={handleChange} required>
                   <option value="">Select your experience</option>
-                  {experienceOptions.map((item) => (
-                    <option key={item} value={item}>
-                      {item}
-                    </option>
-                  ))}
+                  {experienceOptions.map((item) => <option key={item} value={item}>{item}</option>)}
                 </select>
               </div>
 
               <div className="apply-field">
-                <label htmlFor="availability">
-                  Availability to join{" "}
-                  <span className="apply-required">*</span>
-                </label>
-                <select
-                  id="availability"
-                  name="availability"
-                  value={formData.availability}
-                  onChange={handleChange}
-                  required
-                >
+                <label htmlFor="availability">Availability to join <span className="apply-required">*</span></label>
+                <select id="availability" name="availability" value={formData.availability} onChange={handleChange} required>
                   <option value="">Select availability</option>
-                  {availabilityOptions.map((item) => (
-                    <option key={item} value={item}>
-                      {item}
-                    </option>
-                  ))}
+                  {availabilityOptions.map((item) => <option key={item} value={item}>{item}</option>)}
                 </select>
               </div>
 
               <div className="apply-field">
-                <label htmlFor="skills">
-                  Skills <span className="apply-required">*</span>
-                </label>
-                <input
-                  id="skills"
-                  name="skills"
-                  type="text"
-                  placeholder="e.g. Java, React, MySQL"
-                  value={formData.skills}
-                  onChange={handleChange}
-                  required
-                />
+                <label htmlFor="skills">Skills <span className="apply-required">*</span></label>
+                <input id="skills" name="skills" type="text" placeholder="e.g. Java, React, MySQL" value={formData.skills} onChange={handleChange} required />
               </div>
 
               <div className="apply-field">
-                <label htmlFor="portfolioUrl">
-                  Portfolio / GitHub / LinkedIn
-                </label>
-                <input
-                  id="portfolioUrl"
-                  name="portfolioUrl"
-                  type="text"
-                  placeholder="Paste your profile or portfolio link"
-                  value={formData.portfolioUrl}
-                  onChange={handleChange}
-                />
+                <label htmlFor="portfolioUrl">Portfolio / GitHub / LinkedIn</label>
+                <input id="portfolioUrl" name="portfolioUrl" type="text" placeholder="Paste your profile or portfolio link" value={formData.portfolioUrl} onChange={handleChange} />
               </div>
 
               <div className="apply-field apply-full">
-                <label htmlFor="reason">
-                  Why should we hire you?{" "}
-                  <span className="apply-required">*</span>
-                </label>
-                <textarea
-                  id="reason"
-                  name="reason"
-                  placeholder="Tell us about your strengths, experience, and what you bring to this role."
-                  value={formData.reason}
-                  onChange={handleChange}
-                  required
-                />
+                <label htmlFor="reason">Why should we hire you? <span className="apply-required">*</span></label>
+                <textarea id="reason" name="reason" placeholder="Tell us about your strengths, experience, and what you bring to this role." value={formData.reason} onChange={handleChange} required />
               </div>
             </div>
           </section>
 
           <section className="apply-section">
             <h2 className="apply-section-heading">Resume</h2>
-
             <div
               className={`apply-upload${isDragging ? " dragging" : ""}`}
               role="button"
@@ -758,22 +590,12 @@ export default function Apply() {
               onDrop={handleDrop}
             >
               <p className="apply-upload-title">
-                Drag and drop your resume, or{" "}
-                <span className="apply-browse">browse files</span>
+                Drag and drop your resume, or <span className="apply-browse">browse files</span>
               </p>
-              <p className="apply-upload-help">
-                PDF, DOC, or DOCX · Maximum file size 2 MB
-              </p>
+              <p className="apply-upload-help">PDF, DOC, or DOCX · Maximum file size 2 MB</p>
 
-              {resume && (
-                <div className="apply-file-name">✓ {resume.name}</div>
-              )}
-
-              {resumeError && (
-                <div className="apply-file-error" role="alert">
-                  {resumeError}
-                </div>
-              )}
+              {resume && <div className="apply-file-name">✓ {resume.name}</div>}
+              {resumeError && <div className="apply-file-error" role="alert">{resumeError}</div>}
 
               <input
                 ref={fileInputRef}
@@ -782,56 +604,33 @@ export default function Apply() {
                 accept=".pdf,.doc,.docx"
                 hidden
                 onClick={(event) => event.stopPropagation()}
-                onChange={(event) =>
-                  handleResumeChange(event.target.files?.[0])
-                }
+                onChange={(event) => handleResumeChange(event.target.files?.[0])}
               />
             </div>
-
             <p className="apply-footnote">
-              Note: the resume is selected in this form but is not uploaded
-              to the server by the current JSON API.
+              Note: The resume is selected in this form but is not uploaded to
+              the server by the current JSON API.
             </p>
           </section>
 
           <section className="apply-section">
             <h2 className="apply-section-heading">Confirmation</h2>
-
             <label className="apply-checkbox">
-              <input
-                type="checkbox"
-                name="termsAccepted"
-                checked={formData.termsAccepted}
-                onChange={handleChange}
-                required
-              />
+              <input type="checkbox" name="termsAccepted" checked={formData.termsAccepted} onChange={handleChange} required />
               <span>
                 I agree to the Terms &amp; Conditions and confirm that the
-                information provided is accurate.{" "}
-                <span className="apply-required">*</span>
+                information provided is accurate. <span className="apply-required">*</span>
               </span>
             </label>
           </section>
 
-          <button
-            className="apply-submit"
-            type="submit"
-            disabled={isSubmitting}
-          >
-            {isSubmitting && (
-              <span className="apply-loader" aria-hidden="true" />
-            )}
-            {isSubmitting
-              ? "Submitting application..."
-              : "Submit application"}
+          <button className="apply-submit" type="submit" disabled={isSubmitting}>
+            {isSubmitting && <span className="apply-loader" aria-hidden="true" />}
+            {isSubmitting ? "Submitting application..." : "Submit application"}
           </button>
 
           {message.text && (
-            <div
-              className={`apply-message ${message.type}`}
-              role="status"
-              aria-live="polite"
-            >
+            <div className={`apply-message ${message.type}`} role="status" aria-live="polite">
               {message.text}
             </div>
           )}
