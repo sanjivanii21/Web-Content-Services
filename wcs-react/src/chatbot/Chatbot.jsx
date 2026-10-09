@@ -74,7 +74,7 @@ function Chatbot() {
 
                         <p>
                             <em>
-                                Where Smart Solutions Build Trusted Brands!
+                                <b>Where Smart Solutions Build Trusted Brands!</b>
                             </em>
                         </p>
 
