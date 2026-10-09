@@ -12,7 +12,7 @@ let currentTopic = null;
 // WHATSAPP CONFIGURATION
 // =====================================================
 
-const WHATSAPP_NUMBER = "918446944700";
+const WHATSAPP_NUMBER = "919022545488";
 
 function openWhatsApp(message) {
     const whatsappURL =
