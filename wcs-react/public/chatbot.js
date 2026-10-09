@@ -2126,7 +2126,7 @@ return;
     normalizedMessage === "call us"
 ) {
 
-    window.location.href = "tel:+918446944700";
+    window.location.href = "tel:+919022545488";
 
     return;
 }
